@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams,  Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { products } from './product'; // Ensure to import your product data
-import { FaEnvelope, FaInstagram, FaRegStar, FaShoppingBag, FaStar, } from 'react-icons/fa';
+import { FaEnvelope, FaInstagram, FaRegStar, FaShoppingBag, FaStar } from 'react-icons/fa';
 import { FiShoppingCart } from 'react-icons/fi';
 
 interface CartItem {
@@ -15,7 +15,7 @@ interface WishlistItem {
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
- 
+  
   const product = products.find(p => p.id === parseInt(id!));
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [rating, setRating] = useState<number>(0);
@@ -24,9 +24,11 @@ const ProductDetail: React.FC = () => {
 
   const [cart, setCart] = useState<CartItem[]>(() => JSON.parse(localStorage.getItem('cart') || '[]'));
   const [wishlist, setWishlist] = useState<WishlistItem[]>(() => JSON.parse(localStorage.getItem('wishlist') || '[]'));
+  
   const handleRating = (index: number) => {
     setRating(index);
   };
+  
   // Close modal if product not found
   if (!product && !isModalOpen) {
     setIsModalOpen(true);
@@ -106,6 +108,11 @@ const ProductDetail: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Get total number of items in the cart
+  const getTotalCartItems = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
 
   return (
     <div className="product-detail container mx-auto p-6 bg-white">
@@ -202,7 +209,24 @@ const ProductDetail: React.FC = () => {
       )}
 
 
-        <div className="mt-6 flex items-center space-x-2">
+
+      {/* Cart Icon with Counter */}
+      <div className="fixed bottom-8 right-8 flex flex-col items-center">
+        <div className="relative">
+          <Link to='/cart'>
+            <div className="bg-gray-800 text-white rounded-full p-4 cursor-pointer">
+              <span className="material-icons text-2xl"><FiShoppingCart /></span>
+              {getTotalCartItems() > 0 && (
+                <span className="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
+                  {getTotalCartItems()}
+                </span>
+              )}
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      <div className="mt-6 flex items-center space-x-2">
               {[1, 2, 3, 4, 5].map(index => (
                 <div
                   key={index}
@@ -217,48 +241,30 @@ const ProductDetail: React.FC = () => {
                     <FaRegStar className="text-gray-400" />
                   )}
                 </div>
- ))}
 
+                 ))}
+                   </div>
+              
+      <div>
+        <div className="mt-8 border-t pt-6">
+          <h2 className="text-2xl font-thin text-gray-800 text-center">About the Brand</h2>
+          <p className="text-sm text-gray-800 mt-2 text-center">
+            JAELS FASHION specializes in high-quality bags, shoes, jewelry, and clothes. Our mission is
+            to bring elegance and style to your wardrobe at affordable prices.
+          </p>
+        </div>
 
-
-    </div>
-
-    <div className="fixed bottom-8 right-8 flex flex-col items-center">
-        <div className="relative">
-        <Link to='/cart'>  <div className="bg-gray-800 text-white rounded-full p-4 cursor-pointer">
-          
-            <span className="material-icons text-2xl"><FiShoppingCart/></span> 
-            
-             
-           
-          </div></Link>
+        {/* Social Media */}
+        <div className="mt-6 flex justify-center space-x-4">
+          <a href="#" className="text-blue-600 hover:text-blue-800">
+            <FaEnvelope size={24} />
+          </a>
+          <a href="#" className="text-pink-600 hover:text-pink-800">
+            <FaInstagram size={24} />
+          </a>
         </div>
       </div>
-
-    <div>
-    <div className="mt-8 border-t pt-6">
-            <h2 className="text-2xl font-thin text-gray-800 text-center">About the Brand</h2>
-            <p className="text-sm text-gray-800 mt-2 text-center">
-              JAELS FASHION specializes in high-quality bags, shoes, jewelry, and clothes. Our mission is
-              to bring elegance and style to your wardrobe at affordable prices.
-            </p>
-          </div>
-
-          {/* Social Media */}
-          <div className="mt-6 flex justify-center  space-x-4">
-            <a href="#" className="text-blue-600 hover:text-blue-800">
-              <FaEnvelope size={24} />
-            </a>
-            <a href="#" className="text-pink-600 hover:text-pink-800">
-              <FaInstagram size={24} />
-            </a>
-           
-          </div>
     </div>
-    </div>
-
-
-    
   );
 };
 

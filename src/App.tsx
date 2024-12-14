@@ -11,6 +11,7 @@ import OrderHistory from './Pages/products/orderhistory';
 import AboutBrand from './Pages/about';
 import ContactUs from './Pages/contact';
 import Footer from './Pages/footer';
+import ScrollToTop from './Pages/components/scroll';
 
 
 // Importing pages
@@ -21,9 +22,10 @@ const App: React.FC = () => {
     <Router>
       <div>
       
-
+ <ScrollToTop/>
           <Header/>
         <Routes>
+         
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/wishlist" element={<Wishlist />} />
