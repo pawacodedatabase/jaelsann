@@ -1,0 +1,118 @@
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+
+import banner1 from '../../assets/banner1.webp'
+import banner2 from '../../assets/banner2.jpeg'
+import banner3 from '../../assets/banner3.webp'
+import banner4 from '../../assets/banner4.webp'
+import { Link } from "react-router-dom";
+
+const slides = [
+  {
+    id: 1,
+    title: "Industrial Design Meets Fashion",
+    subtitle: "Atypical leather goods for modern lifestyles.",
+    buttonText: "Shop Now",
+    image: banner1,
+  },
+  {
+    id: 2,
+    title: "Elegant Accessories for You",
+    subtitle: "Handcrafted leather goods tailored to perfection.",
+    buttonText: "Discover More",
+    image: banner2,
+  },
+  {
+    id: 3,
+    title: "Luxury Meets Functionality",
+    subtitle: "Transform your look with premium products.",
+    buttonText: "Explore Collection",
+    image: banner3,
+  },
+  {
+    id: 4,
+    title: "Luxury Meets Functionality",
+    subtitle: "Transform your look with premium products.",
+    buttonText: "Explore Collection",
+    image:banner4,
+  },
+];
+
+const Carousel: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-rotate the carousel every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+ 
+
+  return (
+    <div className="relative h-screen overflow-hidden">
+      {/* Carousel Slides */}
+      <div className="absolute inset-0">
+        {slides.map((slide, index) => (
+          <motion.div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentIndex ? 1 : 0 }}
+            transition={{ duration: 1 }}
+            style={{
+              backgroundImage: `url(${slide.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="absolute inset-0 bg-[#1a2d42] opacity-80"></div>
+
+            {/* Text Content */}
+            <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full px-4">
+              <motion.h1
+                className="text-4xl md:text-6xl font-bold mb-4"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+              >
+                {slide.title}
+              </motion.h1>
+              <motion.p
+                className="text-lg md:text-xl mb-8"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                {slide.subtitle}
+              </motion.p>
+              <motion.div
+  className="inline-block"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.7 }}
+>
+  <Link
+    to="/shop" // Replace "/shop" with the desired route
+    className="bg-transparent border-2 border-white px-6 py-3 rounded-md hover:bg-white hover:text-[#1a2d42] transition-all duration-300"
+  >
+    {slide.buttonText}
+  </Link>
+</motion.div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+     
+    </div>
+  );
+};
+
+export default Carousel;
