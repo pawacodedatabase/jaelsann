@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { products } from './product'; // Ensure to import your product data
 import { FaEnvelope, FaInstagram, FaRegStar, FaShoppingBag, FaStar } from 'react-icons/fa';
 import { FiShoppingCart } from 'react-icons/fi';
+import FeaturedProduct from './FeaturedProd';
 
 interface CartItem {
   productId: number;
@@ -115,6 +116,7 @@ const ProductDetail: React.FC = () => {
   };
 
   return (
+    <>
     <div className="product-detail container mx-auto p-6 bg-white">
       {/* Modal for product not found */}
       {isModalOpen && (
@@ -265,6 +267,8 @@ const ProductDetail: React.FC = () => {
         </div>
       </div>
     </div>
+    <FeaturedProduct/>
+    </>
   );
 };
 
