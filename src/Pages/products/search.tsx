@@ -28,7 +28,7 @@ const SearchBar: React.FC = () => {
       <div className="max-w-2xl mx-auto flex  ">
         <input
           type="text"
-          placeholder=".     Search products..."
+          placeholder=". Search products..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full border  focus:outline-none focus:ring-2 focus:ring-black"
@@ -65,7 +65,7 @@ const SearchBar: React.FC = () => {
                   </td>
                   <td className="border px-4 py-2">{product.name}</td>
                   <td className="border px-4 py-2  font-bold text-red-500">
-                    ${product.price}
+                  ₦{product.price}
                   </td>
                   <td className="border px-4 py-2 text-center">
                     <button
@@ -83,7 +83,7 @@ const SearchBar: React.FC = () => {
       ) : (
         <p className="text-center text-gray-500 mt-6">
           {searchResults.length === 0 && searchQuery
-            ? 'No products match your search.'
+            ? ''
             : ''}
         </p>
       )}
