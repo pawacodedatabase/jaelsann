@@ -26,14 +26,10 @@ const Wishlist: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
-      <header className="bg-white py-6 shadow-md">
+      <header className="bg-white py-8 shadow-md">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-gray-800">
-            Your Wishlist
-          </h1>
-          <p className="text-gray-600 mt-2">
-            Explore your favorite products, curated by you.
-          </p>
+          <h1 className="text-4xl font-extrabold text-gray-800">Your Wishlist</h1>
+          <p className="text-lg text-gray-600 mt-2">Explore your favorite products, curated by you.</p>
         </div>
       </header>
 
@@ -41,7 +37,6 @@ const Wishlist: React.FC = () => {
         {/* Wishlist Items */}
         {wishlist.length === 0 ? (
           <div className="flex flex-col items-center justify-center mt-16">
-           
             <p className="text-lg text-gray-600">Your wishlist is currently empty.</p>
             <Link
               to="/shop"
@@ -51,28 +46,26 @@ const Wishlist: React.FC = () => {
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {wishlist.map(item => {
               const product = products.find(product => product.id === item.productId);
               return product ? (
                 <div
                   key={item.productId}
-                  className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition duration-300"
+                  className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
                 >
                   <img
                     src={product.images[0]}
                     alt={product.name}
-                    className="w-full h-48 object-cover rounded-t-lg"
+                    className="w-full h-60 object-cover rounded-t-lg"
                   />
-                  <div className="mt-4">
-                    <h2 className="text-lg font-semibold text-gray-800 truncate">
-                      {product.name}
-                    </h2>
-                    <p className="text-gray-600 mt-1">₦{product.price.toFixed(2)}</p>
+                  <div className="p-4">
+                    <h2 className="text-lg font-semibold text-gray-800 truncate">{product.name}</h2>
+                    <p className="text-gray-600 mt-2">₦{product.price.toFixed(2)}</p>
                     <div className="flex items-center justify-between mt-4">
                       {/* Add to Cart */}
                       <button
-                        className="bg-blue-600 text-white py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition duration-300"
+                        className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center gap-2"
                         onClick={() => {
                           // Logic to add the product to cart
                           alert(`${product.name} added to cart!`);
@@ -97,24 +90,23 @@ const Wishlist: React.FC = () => {
       </div>
 
       {/* About the Brand Section */}
-      <section className="bg-white py-10 mt-10">
-        <div className="container mx-aut-center">
-          <h2 className="text-xl font-bold text-gray-800 text-center">About JAELS FASHION</h2>
-          <p className="text-gray-600 mt-4 max-to text-sm text-center p-9 mx-auto">
-            At JAELS FASHION, we provide the best in class fashion accessories, offering a wide
-            range of bags, shoes, jewelry, and clothing for every occasion. We believe in
-            elegance, quality, and customer satisfaction.
+      <section className="bg-white py-16 mt-16">
+        <div className="container mx-auto text-center">
+          <h2 className="text-2xl font-bold text-gray-800">About JAELS FASHION</h2>
+          <p className="text-sm text-gray-600 mt-4 max-w-2xl mx-auto">
+            At JAELS FASHION, we provide the best in class fashion accessories, offering a wide range of bags,
+            shoes, jewelry, and clothing for every occasion. We believe in elegance, quality, and customer satisfaction.
           </p>
           {/* Social Media Icons */}
-          <div className="flex justify-center gap-6 mt-6">
+          <div className="flex justify-center gap-8 mt-8">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF className="text-blue-600 text-3xl hover:scale-110 transition-transform" />
+              <FaFacebookF className="text-blue-600 text-4xl hover:scale-110 transition-transform" />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-pink-500 text-3xl hover:scale-110 transition-transform" />
+              <FaInstagram className="text-pink-500 text-4xl hover:scale-110 transition-transform" />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-blue-400 text-3xl hover:scale-110 transition-transform" />
+              <FaTwitter className="text-blue-400 text-4xl hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>

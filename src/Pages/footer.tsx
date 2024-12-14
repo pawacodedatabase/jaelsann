@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import {  FaInstagram,  FaEnvelope, FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -57,25 +57,18 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 border-l-4 border-red-600 pl-2">Follow Us</h3>
             <p className="text-gray-300 text-sm mb-4">Connect with us on social media:</p>
-            <div className="flex items-center space-x-4">
+            <div className="flex justify-center space-x-4">
+            <a
+  href="mailto:jaelsann@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-gray-700 hover:bg-red-600 p-3 rounded-full text-white text-lg transition"
+>
+  <FaEnvelope />
+</a>
+              
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-red-600 p-3 rounded-full text-white text-lg transition"
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-red-600 p-3 rounded-full text-white text-lg transition"
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href="https://instagram.com"
+                href="https://instagram.com/shopwithjaels"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-700 hover:bg-red-600 p-3 rounded-full text-white text-lg transition"
@@ -83,13 +76,23 @@ const Footer: React.FC = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://wa.me/+2349132214390 
+"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-700 hover:bg-red-600 p-3 rounded-full text-white text-lg transition"
               >
-                <FaLinkedinIn />
+                <FaWhatsapp />
               </a>
+
+              <a
+  href="tel:+2349132214390"
+  className="bg-gray-700 hover:bg-red-600 p-3 rounded-full text-white text-lg transition"
+>
+  <FaPhone />
+</a>
+
+             
             </div>
           </div>
         </div>
@@ -118,6 +121,19 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
+
+        {/* //advert */}
+<div className='text-sm text-center mt-8 '>
+  <p className='text-gray-400'>website created by | <a
+                href="https://instagram.com/pawacode"
+                target="_blank"
+                rel="noopener noreferrer"
+                className='text-red-500'
+              >
+                @pawacode
+              </a></p>
+</div>
+        
       </div>
     </footer>
   );

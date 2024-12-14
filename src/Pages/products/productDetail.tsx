@@ -256,10 +256,10 @@ const ProductDetail: React.FC = () => {
 
         {/* Social Media */}
         <div className="mt-6 flex justify-center space-x-4">
-          <a href="#" className="text-blue-600 hover:text-blue-800">
+          <a href="mailto:jaelsann@gmail.com" className="text-blue-600 hover:text-blue-800">
             <FaEnvelope size={24} />
           </a>
-          <a href="#" className="text-pink-600 hover:text-pink-800">
+          <a href="https://instagram.com/shopwithjaels" className="text-pink-600 hover:text-pink-800">
             <FaInstagram size={24} />
           </a>
         </div>
