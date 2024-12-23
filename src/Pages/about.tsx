@@ -3,6 +3,7 @@ import dami1 from "../assets/dami_1.jpg"
 import dami2 from "../assets/dami_2.jpg"
 import dami3 from "../assets/dami_3.jpg"
 import dami4 from "../assets/dami_4.jpg"
+import { FaFacebook, FaFacebookSquare, FaTiktok, FaTwitterSquare } from 'react-icons/fa';
 const ceo = {
   name: 'Damilola Sobowale',
   role: 'CEO & Founder',
@@ -41,6 +42,13 @@ const AboutBrand: React.FC = () => {
           </div>
           <h3 className="text-xl font-bold text-gray-900">{ceo.name}</h3>
           <p className="text-gray-600 text-sm mb-6">{ceo.role}</p>
+
+          <div className='flex gap-3 justify-center text-2xl  text-gray-400  mb-9'>
+            {/* Social Media Icons */}
+            <FaFacebookSquare className='hover:text-black'/>
+            <FaTwitterSquare className='hover:text-black'/>
+            <FaTiktok className='hover:text-black'/>
+          </div>
           {/* Thumbnail Gallery */}
           <div className="flex justify-center space-x-4">
             {ceo.images.map((image, index) => (
