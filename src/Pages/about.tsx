@@ -45,9 +45,9 @@ const AboutBrand: React.FC = () => {
 
           <div className='flex gap-3 justify-center text-2xl  text-gray-400  mb-9'>
             {/* Social Media Icons */}
-            <FaFacebookSquare className='hover:text-black'/>
-            <FaTwitterSquare className='hover:text-black'/>
-            <FaTiktok className='hover:text-black'/>
+           <div className='hover:text-black'> <FaFacebookSquare /></div>
+           <div className='hover:text-black'><FaTwitterSquare /></div> 
+           <div className='hover:text-black'> <FaTiktok/></div>
           </div>
           {/* Thumbnail Gallery */}
           <div className="flex justify-center space-x-4">
