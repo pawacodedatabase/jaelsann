@@ -1,47 +1,23 @@
-import React from 'react';
-import { FaFacebookSquare, FaInstagramSquare,  FaTwitterSquare } from 'react-icons/fa';
-
-
-const team = [
-    {
-      name: 'Damilola Sobowale',
-      role: 'CEO & Founder',
-      image: 'https://via.placeholder.com/150',
-      social: {
-        facebook: 'https://facebook.com/janedoe',
-        twitter: 'https://twitter.com/janedoe',
-        instagram: 'https://instagram.com/janedoe',
-      },
-    },
-    {
-      name: 'John ',
-      role: 'Creative Director',
-      image: 'https://via.placeholder.com/150',
-      social: {
-        facebook: 'https://facebook.com/johnsmith',
-        twitter: 'https://twitter.com/johnsmith',
-        instagram: 'https://instagram.com/johnsmith',
-      },
-    },
-    {
-      name: 'Sarah ',
-      role: 'Marketing Manager',
-      image: 'https://via.placeholder.com/150',
-      social: {
-        facebook: 'https://facebook.com/sarahlee',
-        twitter: 'https://twitter.com/sarahlee',
-        instagram: 'https://instagram.com/sarahlee',
-      },
-    },
-  ];
-
+import React, { useState } from 'react';
+import dami1 from "../assets/dami_1.jpg"
+import dami2 from "../assets/dami_2.jpg"
+import dami3 from "../assets/dami_3.jpg"
+import dami4 from "../assets/dami_4.jpg"
+const ceo = {
+  name: 'Damilola Sobowale',
+  role: 'CEO & Founder',
+  images: [
+    dami4, 
+    dami2,dami3,dami1
+  ],
+};
 
 const AboutBrand: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState(ceo.images[0]);
+
   return (
     <div className="bg-gray-50 py-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-
-        
         {/* Brand Introduction */}
         <section className="mb-12 text-center">
           <h1 className="text-2xl font-extrabold text-gray-500 mb-4">About Jaels Ann</h1>
@@ -50,66 +26,39 @@ const AboutBrand: React.FC = () => {
           </p>
         </section>
 
-       
-
-        {/* Meet the Team */}
-      <section className="bg-gray-100 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-center text-gray-500 mb-8">Meet Our Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {team.map((member, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-lg"
-            >
+        {/* CEO Section */}
+        <section className="text-center">
+          <h2 className="text-2xl font-bold text-gray-500 mb-8">Meet Our CEO</h2>
+          <div className="mb-6">
+            {/* Main Image */}
+            <div className="w-full max-w-3xl mx-auto">
               <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-48 object-cover"
+                src={selectedImage}
+                alt={ceo.name}
+                className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                <p className="text-gray-600 text-sm">{member.role}</p>
-                <div className="mt-4 flex justify-center space-x-4">
-                  {member.social.facebook && (
-                    <a
-                      href={member.social.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-blue-600"
-                    >
-                      <FaFacebookSquare size={25} />
-                    </a>
-                  )}
-                  {member.social.twitter && (
-                    <a
-                      href={member.social.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-blue-400"
-                    >
-                      <FaTwitterSquare size={25} />
-                    </a>
-                  )}
-                  {member.social.instagram && (
-                    <a
-                      href={member.social.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-pink-500"
-                    >
-                      <FaInstagramSquare size={25} />
-                    </a>
-                  )}
-                </div>
-              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+          <h3 className="text-xl font-bold text-gray-900">{ceo.name}</h3>
+          <p className="text-gray-600 text-sm mb-6">{ceo.role}</p>
+          {/* Thumbnail Gallery */}
+          <div className="flex justify-center space-x-4">
+            {ceo.images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Thumbnail ${index + 1}`}
+                onClick={() => setSelectedImage(image)}
+                className={`w-20 h-20 rounded-md object-cover cursor-pointer border-2 transition duration-200 hover:scale-105 ${
+                  selectedImage === image ? 'border-gray-900' : 'border-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+        </section>
+
         {/* Additional Information */}
-        <section className="mb-12">
+        <section className="mb-12 mt-10">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">More About Us</h2>
           <p className="text-sm text-center p-4 text-gray-700 leading-relaxed">
             Jaels Ann started with a simple goal: to make fashion accessible and enjoyable for everyone. Over the years, we have expanded our offerings to include a diverse range of products, from trendy clothing to elegant accessories. Our commitment to quality, innovation, and customer satisfaction sets us apart in the fashion industry. We look forward to growing and continuing to serve our customers with passion and dedication.
