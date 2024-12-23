@@ -3,7 +3,7 @@ import dami1 from "../assets/dami_1.jpg"
 import dami2 from "../assets/dami_2.jpg"
 import dami3 from "../assets/dami_3.jpg"
 import dami4 from "../assets/dami_4.jpg"
-import { FaFacebook, FaFacebookSquare, FaTiktok, FaTwitterSquare } from 'react-icons/fa';
+import {  FaFacebookSquare, FaTiktok, FaTwitterSquare } from 'react-icons/fa';
 const ceo = {
   name: 'Damilola Sobowale',
   role: 'CEO & Founder',
