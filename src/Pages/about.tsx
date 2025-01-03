@@ -23,7 +23,7 @@ const AboutBrand: React.FC = () => {
         <section className="mb-12 text-center">
           <h1 className="text-2xl font-extrabold text-gray-500 mb-4">About Jaels Ann</h1>
           <p className="text-sm text-center p-4 text-gray-700 leading-relaxed">
-            At <span className="font-semibold">Jaels Ann</span>, we believe fashion is more than just clothing; it’s a lifestyle. We are dedicated to providing premium-quality clothes, jewelry, and wristwatches that reflect style and elegance. With a passion for excellence and customer satisfaction, we strive to make every shopping experience extraordinary.
+          At <span className='font-semibold'>JAELS ANN</span>, we specialize in high-quality clothing, handcrafted leather footwear for both men and women, as well as unique handmade bags, wallets,belts and jewelries. Our products are meticulously designed to offer durability, style, and comfort, ensuring every piece reflects timeless elegance. JAELS ANN is not just about fashion; it's a lifestyle choice, empowering individuals to express their personality through premium, handcrafted fashion essentials.
           </p>
         </section>
 

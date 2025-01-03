@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 
-import banner1 from '../../assets/banner1.webp'
-import banner2 from '../../assets/banner2.jpeg'
-import banner3 from '../../assets/banner3.webp'
-import banner4 from '../../assets/banner4.webp'
+import banner1 from '../../assets/dami_4.jpg'
+import banner2 from '../../assets/dami_2.jpg'
+import banner3 from '../../assets/dami_3.jpg'
+import banner4 from '../../assets/dami_1.jpg'
 import { Link } from "react-router-dom";
 
 const slides = [

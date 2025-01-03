@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import img from '../../assets/banner1.webp'
+import img from '../../assets/dami_1.jpg'
 import { Link } from 'react-router-dom';
 const EmailPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true);
