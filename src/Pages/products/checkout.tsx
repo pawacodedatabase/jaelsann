@@ -9,13 +9,15 @@ interface CartItem {
 }
 
 const deliveryFees = [
-  { state: 'West', fee: 2500 },
-  { state: 'North', fee: 3500 },
-  { state: 'East', fee: 3500 },
-  { state: 'South', fee: 35500 },
+  { state: 'West (W)', fee: 2500 },
+  { state: 'North (N)', fee: 3500 },
+  { state: 'East (E)', fee: 3500 },
+  { state: 'South (S)', fee: 35500 },
   
   // Add more states as needed
 ];
+
+
 
 const Checkout: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -28,6 +30,12 @@ const Checkout: React.FC = () => {
   const [selectedDeliveryState, setSelectedDeliveryState] = useState<string>('');
   const [deliveryFee, setDeliveryFee] = useState<number>(0);
   const navigate = useNavigate();
+
+
+  
+  const BOT_TOKEN = "8119231817:AAGAmxzBGY0vBPeVFM2hEEBbXkoAUGxm_HE"; // Replace with your bot's token
+  const CHAT_ID = "6837437455"; // Replace with your chat ID
+
 
   // Load cart from local storage
   useEffect(() => {
@@ -53,6 +61,47 @@ const Checkout: React.FC = () => {
     if (selectedFee) {
       setDeliveryFee(selectedFee.fee);
     }
+  };
+
+  const sendCartDetailsToTelegram = async () => {
+    const cartDetails = cart.map(item => {
+      const product = products.find(product => product.id === item.productId);
+      return product
+        ? `${product.name}: Quantity ${item.quantity}, Price ₦${product.price.toFixed(2)}`
+        : null;
+    }).filter(Boolean).join('\n');
+
+    const message = `
+🛒 *Cart Details*:
+${cartDetails}
+📦 *Delivery Fee*: ₦${deliveryFee}
+💰 *Total*: ₦${(totalPrice + deliveryFee).toFixed(2)}
+`;
+
+    try {
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: 'Markdown',
+        }),
+      });
+      
+    } catch (error) {
+      console.error('Failed to send message to Telegram:', error);
+      
+    }
+  };
+
+  const [buttonText, setButtonText] = useState("Confirm Order");
+
+  const handleClick = () => {
+    setButtonText("Order sent ");
+    sendCartDetailsToTelegram(); // Call your function
   };
 
   // Handle form submission
@@ -125,7 +174,7 @@ const Checkout: React.FC = () => {
             </table>
           </div>
           <div className="mt-4">
-            <label htmlFor="deliveryState" className="block text-sm font-medium text-gray-700">Select Cardinal Direction</label>
+            <label htmlFor="deliveryState" className="block text-sm font-medium text-gray-700">Select Delivery Cardinal Point</label>
             <select
               id="deliveryState"
               name="deliveryState"
@@ -148,13 +197,25 @@ const Checkout: React.FC = () => {
 
           </div>
           <div className="mt-4 text-right">
-            <h3 className="text-xl font-semibold" style={{ color: '#1a2d42' }}>Total: ₦{(totalPrice + deliveryFee).toFixed(2)}</h3>
+            <h3 className="text-xl font-semibold mb-2" style={{ color: '#1a2d42' }}>Total: ₦{(totalPrice + deliveryFee).toFixed(2)}</h3>
+            <hr /> <hr /><hr />
+            <p className='text-sm text-center mt-6 mb-4 font-bold'>Click the button below to confirm your  order</p>
+        <button
+      onClick={handleClick}
+      className="w-full py-3 bg-[#1a2d42] text-white font-medium rounded-md hover:bg-white  hover:border-black hover:border-2 hover:text-[#1a2d42] focus:outline-none focus:ring-2 focus:ring-[#1a2d42]"
+    >
+      {buttonText}
+    </button>
           </div>
         </div>
 
+
+       
         {/* Checkout Form */}
         <div className="border p-4 rounded-lg shadow-md" style={{ backgroundColor: '#f9f9f9' }}>
           <CheckoutForm />
+
+          
 
           <button  onClick={handlePlaceOrder}></button>
           

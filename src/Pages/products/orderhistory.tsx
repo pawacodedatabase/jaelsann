@@ -14,7 +14,7 @@ const OrderHistory: React.FC = () => {
   const { fullName, orderId  , address , amountSent , bankName , paymentMethod , senderName , color , size } = location.state || {};
 
   const message = encodeURIComponent(
-    `Hello! I would like to inquire about my Transaction. \n\n Order ID: ${orderId}\nName: ${fullName} \n Delivery Address: ${address} \n\n Payment Method ${paymentMethod} \n\n Shoe size ${size} \n\n Color ${color} \n\n  Amount: ${amountSent} \n Senders Name: ${senderName} \n Bank Name: ${bankName}  , `
+    `Hello! I would like to inquire about my Transaction. \n\n Order ID: ${orderId}\nName: ${fullName} \n Delivery Address: ${address} \n\n Payment Method ${paymentMethod} \n\n Shoe size ${size} \n\n Color ${color} \n\n  Amount: ${amountSent} \n Senders Name: ${senderName} \n Bank Name: ${bankName}  \n `
   );
 
   // WhatsApp number (replace with your own phone number)

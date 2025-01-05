@@ -50,12 +50,12 @@ const CheckoutForm: React.FC = () => {
     if (paymentMethod === 'bitcoin') {
       setFormData((prevState) => ({
         ...prevState,
-        paymentDetails: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', // Example Bitcoin address
+        paymentDetails: 'Not available yet', // Example Bitcoin address
       }));
     } else if (paymentMethod === 'bankTransfer') {
       setFormData((prevState) => ({
         ...prevState,
-        paymentDetails: 'Account Number: 1234567890, Bank Name: XYZ Bank', // Example Bank details
+        paymentDetails: `Palmpay 9132214390, Damilola Sobowale`, // Example Bank details
       }));
     } else {
       setFormData((prevState) => ({
@@ -84,6 +84,10 @@ const CheckoutForm: React.FC = () => {
     // Generate unique order ID
     const orderId = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
+  
+
+    
+
     // Store order in local storage (simulating order history)
     const order = { orderId, formData };
     const orderHistory = JSON.parse(localStorage.getItem('orderHistory') || '[]');
@@ -106,7 +110,7 @@ const CheckoutForm: React.FC = () => {
           orderId,
           address: formData.address,
           size: formData.size,
-          color: formData.color
+          color: formData.color,
         },
       });
     }, 3000);
@@ -287,7 +291,7 @@ const CheckoutForm: React.FC = () => {
             onChange={handleChange}
             required
             readOnly={formData.paymentMethod === 'bitcoin' || formData.paymentMethod === 'bankTransfer'}
-            className="mt-1 block w-full border-b-2 border-gray-300 focus:border-[#1a2d42] focus:outline-none py-2 pl-10 text-gray-700"
+            className="mt-1 block w-full border-b-2 border-gray-300 focus:border-[#1a2d42] focus:outline-none py-2 pl-10 text-gray-700 text-sm p-3"
           />
           {formData.paymentMethod === 'bitcoin' && (
             <button
