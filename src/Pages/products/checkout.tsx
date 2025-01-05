@@ -9,11 +9,11 @@ interface CartItem {
 }
 
 const deliveryFees = [
-  { state: 'Lagos', fee: 500 },
-  { state: 'Abuja', fee: 700 },
-  { state: 'Kano', fee: 600 },
-  { state: 'Oyo', fee: 400 },
-  { state: 'Rivers', fee: 650 },
+  { state: 'West', fee: 2500 },
+  { state: 'North', fee: 3500 },
+  { state: 'East', fee: 3500 },
+  { state: 'South', fee: 35500 },
+  
   // Add more states as needed
 ];
 
@@ -125,7 +125,7 @@ const Checkout: React.FC = () => {
             </table>
           </div>
           <div className="mt-4">
-            <label htmlFor="deliveryState" className="block text-sm font-medium text-gray-700">Select Delivery State</label>
+            <label htmlFor="deliveryState" className="block text-sm font-medium text-gray-700">Select Cardinal Direction</label>
             <select
               id="deliveryState"
               name="deliveryState"
@@ -133,7 +133,7 @@ const Checkout: React.FC = () => {
               onChange={handleDeliveryStateChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             >
-              <option value="">Select State</option>
+              <option value="">Select </option>
               {deliveryFees.map((stateFee) => (
                 <option key={stateFee.state} value={stateFee.state}>
                   {stateFee.state}
@@ -142,8 +142,10 @@ const Checkout: React.FC = () => {
             </select>
           </div>
 
-          <div className="mt-4 text-right">
+          <div className="mt-4 text-right">  
+                      <p className='text-sm font-thin '><span className='font-semibold'>NB:</span> Delivery fee depends on the distance.</p>
             <h3 className="text-xl font-semibold" style={{ color: '#1a2d42' }}>Delivery Fee: ₦{deliveryFee}</h3>
+
           </div>
           <div className="mt-4 text-right">
             <h3 className="text-xl font-semibold" style={{ color: '#1a2d42' }}>Total: ₦{(totalPrice + deliveryFee).toFixed(2)}</h3>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBitcoin, FaRegCreditCard, FaUser, FaEnvelope, FaMapMarkerAlt, FaCity, FaClipboard, FaPiggyBank, FaCheckCircle } from 'react-icons/fa';
+import { FaBitcoin, FaRegCreditCard, FaUser, FaEnvelope, FaMapMarkerAlt, FaCity, FaClipboard, FaPiggyBank, FaCheckCircle, FaRuler, FaPaintBrush } from 'react-icons/fa';
+import { color } from 'framer-motion';
 
 type CheckoutFormData = {
   fullName: string;
@@ -14,6 +15,8 @@ type CheckoutFormData = {
   senderName: string;
   amountSent: string;
   bankName: string;
+  color: string;
+  size: string;
 };
 
 const CheckoutForm: React.FC = () => {
@@ -29,6 +32,8 @@ const CheckoutForm: React.FC = () => {
     senderName: '',
     amountSent: '',
     bankName: '',
+    color: '',
+    size: '',
   });
 
   const navigate = useNavigate();
@@ -100,11 +105,16 @@ const CheckoutForm: React.FC = () => {
           paymentMethod: formData.paymentMethod,
           orderId,
           address: formData.address,
+          size: formData.size,
+          color: formData.color
         },
       });
     }, 3000);
   };
   return (
+    <>
+    
+
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md border-b-4 border-gray-300">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">Shipping Details</h2>
 
@@ -124,6 +134,39 @@ const CheckoutForm: React.FC = () => {
           className="mt-1 block w-full border-b-2 border-gray-300 focus:border-[#1a2d42] focus:outline-none py-2 pl-10 text-gray-700"
         />
       </div>
+
+      <div className="mb-6 relative">
+        <div className="absolute left-3 top-2 text-gray-500">
+          <FaRuler />
+        </div>
+        <input
+          type="number"
+          id="size"
+          name="size"
+          value={formData.size}
+          onChange={handleChange}
+          required
+          placeholder="Shoe Size*"
+          className="mt-1 block w-full border-b-2 border-gray-300 focus:border-[#1a2d42] focus:outline-none py-2 pl-10 text-gray-700"
+        />
+      </div>
+      <div className="mb-6 relative">
+        <div className="absolute left-3 top-2 text-gray-500">
+          <FaPaintBrush />
+        </div>
+        <input
+          type="text"
+          id="color"
+          name="color"
+          value={formData.color}
+          onChange={handleChange}
+          required
+          placeholder="Preffered color"
+          className="mt-1 block w-full border-b-2 border-gray-300 focus:border-[#1a2d42] focus:outline-none py-2 pl-10 text-gray-700"
+        />
+      </div>
+
+
 
       {/* Email */}
       <div className="mb-6 relative">
@@ -345,7 +388,7 @@ const CheckoutForm: React.FC = () => {
         </div>
       )}
 
-    </form>
+    </form></>
   );
 };
 
