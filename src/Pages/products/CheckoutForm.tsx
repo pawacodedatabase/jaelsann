@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaBitcoin, FaRegCreditCard, FaUser, FaEnvelope, FaMapMarkerAlt, FaCity, FaClipboard, FaPiggyBank, FaCheckCircle, FaRuler, FaPaintBrush } from 'react-icons/fa';
-import { color } from 'framer-motion';
+
 
 type CheckoutFormData = {
   fullName: string;
