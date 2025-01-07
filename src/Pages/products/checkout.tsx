@@ -33,8 +33,8 @@ const Checkout: React.FC = () => {
 
 
   
-  const BOT_TOKEN = "8119231817:AAGAmxzBGY0vBPeVFM2hEEBbXkoAUGxm_HE"; // Replace with your bot's token
-  const CHAT_ID = "6837437455"; // Replace with your chat ID
+  const BOT_TOKEN = "7946272601:AAHFjexGeyGdx1ETQKSjBZpigKVkmV75InQ"; // Replace with your bot's token
+  const CHAT_ID = "7126688591"; // Replace with your chat ID
 
 
   // Load cart from local storage
@@ -72,10 +72,12 @@ const Checkout: React.FC = () => {
     }).filter(Boolean).join('\n');
 
     const message = `
-🛒 *Cart Details*:
+🛒 *Shopper Alert*:
 ${cartDetails}
 📦 *Delivery Fee*: ₦${deliveryFee}
 💰 *Total*: ₦${(totalPrice + deliveryFee).toFixed(2)}
+
+
 `;
 
     try {
