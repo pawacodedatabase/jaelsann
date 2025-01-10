@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { FaBitcoin, FaRegCreditCard, FaUser, FaEnvelope, FaMapMarkerAlt, FaCity, FaClipboard, FaPiggyBank, FaCheckCircle, FaRuler, FaPaintBrush } from 'react-icons/fa';
 
 
+
+
+
 type CheckoutFormData = {
   fullName: string;
   email: string;
@@ -65,6 +68,14 @@ const CheckoutForm: React.FC = () => {
     }
   };
 
+  
+ 
+
+
+  
+
+        
+
   // When the payment method changes, set the payment details accordingly
   const handlePaymentMethodChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
@@ -77,27 +88,62 @@ const CheckoutForm: React.FC = () => {
     navigator.clipboard.writeText(formData.paymentDetails);
   };
 
-  // Function to handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Generate unique order ID
-    const orderId = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
   
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    
+  const TELEGRAM_BOT_TOKEN = '7946272601:AAHFjexGeyGdx1ETQKSjBZpigKVkmV75InQ';
+  const TELEGRAM_CHAT_ID = '7126688591';
 
-    // Store order in local storage (simulating order history)
-    const order = { orderId, formData };
-    const orderHistory = JSON.parse(localStorage.getItem('orderHistory') || '[]');
-    orderHistory.push(order);
-    localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+  // Generate unique order ID
+  const orderId = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
-    // Navigate to order history page
-    setLoading(true);
+  // Store order in local storage (simulating order history)
+  const order = { orderId, formData };
+  const orderHistory = JSON.parse(localStorage.getItem('orderHistory') || '[]');
+  orderHistory.push(order);
+  localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 
-    // After 3 seconds, navigate to order history page
+  // Loading state
+  setLoading(true);
+
+  const escapeMarkdown = (text: string) =>
+    text.replace(/(\*|_|`|\[|\])/g, '\\$1');
+
+  const message = `
+    🔔 *New Order* 🔔
+    ---------------------------------
+    👤 *Customer Name*: ${escapeMarkdown(formData.fullName)}
+    📧 *Email*: ${escapeMarkdown(formData.email)}
+    🏠 *Address*: ${escapeMarkdown(formData.address)}, ${escapeMarkdown(formData.city)}, ${escapeMarkdown(formData.state)}, ${escapeMarkdown(formData.zipCode)}
+    👟 *Shoe Size*: ${escapeMarkdown(formData.size)}
+    🎨 *Preferred Color*: ${escapeMarkdown(formData.color)}
+    💳 *Payment Method*: ${escapeMarkdown(formData.paymentMethod)}
+    💵 *Amount Sent*: ${escapeMarkdown(formData.amountSent)}
+    🏦 *Bank Name*: ${escapeMarkdown(formData.bankName)}
+    📦 *Sender's Name*: ${escapeMarkdown(formData.senderName)}
+    🆔 *Order ID*: ${escapeMarkdown(orderId)}
+  `;
+
+  try {
+    const response = await fetch(
+      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: message,
+          parse_mode: 'Markdown',
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Failed to send message to Telegram');
+    }
+
     setTimeout(() => {
       setLoading(false);
       navigate('/cart/history', {
@@ -114,7 +160,13 @@ const CheckoutForm: React.FC = () => {
         },
       });
     }, 3000);
-  };
+  } catch (error) {
+    console.error('Error sending message to Telegram:', error);
+    setLoading(false);
+  }
+};
+
+  
   return (
     <>
     

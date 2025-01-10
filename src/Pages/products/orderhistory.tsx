@@ -37,7 +37,7 @@ const OrderHistory: React.FC = () => {
         <p className="text-lg text-gray-600 mt-2">Thank you for your order!</p>
         <p>Delivery address: {address}</p>
         <br />
-        <p className=' max-w-[300px]  m-auto '>Our team will review your Transaction and get back with you shortly </p>
+        <p className=' max-w-[300px]  m-auto '>Our team will review your Transaction and get back with you shortly.</p>
       </div>
 
       <div className="mt-6 flex justify-center">
