@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import image1Url from "../../assets/bks2.jpg"; // Replace with your image path
-import image2Url from "../../assets/banner4.webp"; // Replace with your image path
+import image2Url from "../../assets/ring__1.jpg"; // Replace with your image path
 
 const DualImageComponent = () => {
   return (

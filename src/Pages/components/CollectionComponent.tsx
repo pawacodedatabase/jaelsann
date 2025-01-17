@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import imageUrl from "../../assets/banner4.webp";
+import imageUrl from "../../assets/baagggg_3.jpg";
 
 const CollectionComponent = () => {
   return (
