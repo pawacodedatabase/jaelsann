@@ -12,7 +12,7 @@ const slides = [
   {
     id: 1,
     title: "Industrial Design Meets Fashion",
-    subtitle: "Atypical leather goods for modern lifestyles.",
+    subtitle: "A typical leather goods for modern lifestyles.",
     buttonText: "Shop Now",
     image: banner1,
   },
