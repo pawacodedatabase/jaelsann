@@ -54,7 +54,7 @@ import hon24 from '../../assets/honja_2.jpg';
 
 import cross_1 from '../../assets/cross_1.jpg';
 import cross_2 from '../../assets/cross_2.jpg';
-import cross_3 from '../../assets/cross_3.jpg';
+import cross_3 from '../../assets/cross_13.jpg';
 
 import ppsand_1 from '../../assets/ppsand_1.jpg';
 import ppsand_2 from '../../assets/ppsand_2.jpg';
