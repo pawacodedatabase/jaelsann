@@ -48,9 +48,45 @@ import faceee_2 from '../../assets/faceee_2.jpg';
 import faceee_3 from '../../assets/faceee_3.jpg';
 
 
+import hon22 from '../../assets/hoon222.jpg';
+import hon23 from '../../assets/honja_1.jpg';
+import hon24 from '../../assets/honja_2.jpg';
+
+import cross_1 from '../../assets/cross_1.jpg';
+import cross_2 from '../../assets/cross_2.jpg';
+import cross_3 from '../../assets/cross_3.jpg';
+
+import ppsand_1 from '../../assets/ppsand_1.jpg';
+import ppsand_2 from '../../assets/ppsand_2.jpg';
+import ppsand_3 from '../../assets/ppsand_3.jpg';
+
+import ldsch_1 from '../../assets/ldsch_1.jpg';
+import ldsch_2 from '../../assets/ldsch_2.jpg';
+import ldsch_3 from '../../assets/ldsch_3.jpg';
+
+
+import rrrvvbel_1 from '../../assets/rrrvvbel_1.jpg';
+import rrrvvbel_2 from '../../assets/rrrvvbel_2.jpg';
+import rrrvvbel_3 from '../../assets/rrrvvbel_3.jpg';
+import rrrvvbel_4 from '../../assets/rrrvvbel_4.jpg';
+import rrrvvbel_5 from '../../assets/rrrvvbel_5.jpg';
+import rrrvvbel_6 from '../../assets/rrrvvbel_6.jpg';
+import rrrvvbel_7 from '../../assets/rrrvvbel_7.jpg';
+
+
+
+import ldbag_1 from '../../assets/ldbag_1.jpg';
+import ldbag_2 from '../../assets/ldbag_2.jpg';
+import ldbag_3 from '../../assets/ldbag_3.jpg';
+
+
 import faceee_5 from '../../assets/sweet_1.jpg';
 import faceee_6 from '../../assets/sweet_2.jpg';
 import faceee_7 from '../../assets/sweet_3.jpg';
+
+import trian_1 from '../../assets/trian_1.jpg';
+import trian_2 from '../../assets/trian_2.jpg';
+import trian_3 from '../../assets/trian_3.jpg';
 
 
 import ring__1 from '../../assets/ring__1.jpg';
@@ -633,106 +669,106 @@ import envelope_2 from '../../assets/envelope_2.jpg';
       description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
       images: [imgg2],
     },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+    {
+      id: 43,
+      name: 'Jaels H-Pam',
+      category: 'Shoes',
+      subCategories: ['male'],
+      price: 30000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
+      images: [hon22],
+    },
+    {
+      id: 44,
+      name: 'Jaels H-Pam Black',
+      category: 'Shoes',
+      subCategories: ['male'],
+      price: 30000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
+      images: [hon23, hon24],
+    },
+    {
+      id: 45,
+      name: 'Cross-Leather Pam',
+      category: 'Shoes',
+      subCategories: ['Male'],
+      price: 30000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
+      images: [cross_1, cross_2, cross_3],
+    },
+    {
+      id: 46,
+      name: 'Triangle Pam ',
+      category: 'Shoes',
+      subCategories: ['Male'],
+      price: 28000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
+      images: [trian_1, trian_2, trian_3],
+    },
+    {
+      id: 47,
+      name: 'Plain and Pattern Sandals ',
+      category: 'Shoes',
+      subCategories: ['male'],
+      price: 36000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
+      images: [ppsand_1, ppsand_2, ppsand_3],
+    },
+    {
+      id: 48,
+      name: 'Leather drum bag',
+      category: 'Bags',
+      subCategories: ['Unisex'],
+      price: 25000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann bags – where elegance meets durability. Designed with premium materials and crafted to perfection`,
+      images: [ldbag_1, ldbag_2, ldbag_3],
+    },
+    {
+      id: 49,
+      name: 'Leather School bag ',
+      category: 'Bags',
+      subCategories: ['Unisex'],
+      price: 18000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann bags – where elegance meets durability. Designed with premium materials and crafted to perfection`,
+      images: [ldsch_1, ldsch_2, ldsch_3],
+    },
+    {
+      id: 50,
+      name: 'Unisex Reversiblebelt ',
+      category: 'Belt',
+      subCategories: ['Unisex'],
+      price: 12000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann Belts – where elegance meets durability. Designed with premium materials and crafted to perfection`,
+      images: [rrrvvbel_1, rrrvvbel_2, rrrvvbel_3],
+    },
+    {
+      id: 51,
+      name: 'Leather Wallet',
+      category: 'Shoes',
+      subCategories: ['Unisex'],
+      price: 9000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
-    // {
-    //   id: 42,
-    //   name: '',
-    //   category: 'Shoes',
-    //   subCategories: ['Women'],
-    //   price: 15000,
+      description: `Step into style and comfort with Jaels Ann Wallets – where elegance meets durability. Designed with premium materials and crafted to perfection.`,
+      images: [ rrrvvbel_4, rrrvvbel_5,],
+    },
+    {
+      id: 52,
+      name: 'Lady twist',
+      category: 'Shoes',
+      subCategories: ['Women'],
+      price: 12000,
       
-    //   description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
-    //   images: [],
-    // },
+      description: `Step into style and comfort with Jaels Ann shoes – where elegance meets durability. Designed with premium materials and crafted to perfection, each pair complements your every move, ensuring you look and feel your best. Whether it's a casual day out, a formal occasion, or a night to remember, Jaels Ann shoes offer timeless designs and unmatched comfort, tailored to elevate your wardrobe and keep you confidently on your feet.`,
+      images: [ rrrvvbel_6, rrrvvbel_7],
+    },
     // {
     //   id: 42,
     //   name: '',
