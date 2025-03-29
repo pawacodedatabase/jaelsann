@@ -5,8 +5,8 @@ const JSON_BIN_ID = "67e7bbcb8561e97a50f50d3c";
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu";
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
-const CLOUDINARY_UPLOAD_PRESET = "your_upload_preset";
-const CLOUDINARY_CLOUD_NAME = "your_cloud_name";
+const CLOUDINARY_UPLOAD_PRESET =  `jaelsann`;
+const CLOUDINARY_CLOUD_NAME = "dx90y9zdx";
 const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
 
 interface Product {
