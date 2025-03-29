@@ -12,6 +12,9 @@ import AboutBrand from './Pages/about';
 import ContactUs from './Pages/contact';
 import Footer from './Pages/footer';
 import ScrollToTop from './Pages/components/scroll';
+import Admin from './Pages/jsoBin/admin';
+import ShopList from './Pages/jsoBin/prodList';
+import ProductDetails from './Pages/jsoBin/prodDetail';
 
 
 // Importing pages
@@ -34,7 +37,10 @@ const App: React.FC = () => {
         <Route path="/cart" element={<Cart/>} />
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/checkout" element={<Checkout/>} />
+        <Route path="/admin" element={<Admin/>} />
+        <Route path="/products" element={<ShopList/>} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
          </Routes>
          <Footer/>
       </div>
