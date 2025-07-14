@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FaEnvelope, FaInstagram, FaRegStar, FaStar, FaWhatsapp } from "react-icons/fa";
 import FeaturedProduct from "../products/FeaturedProd";
+import RelatedShop from "./related";
 
 const JSON_BIN_ID = "67e7bbcb8561e97a50f50d3c";
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu";
@@ -180,6 +181,7 @@ const ProductDetails: React.FC = () => {
         )}
       </div>
 
+<RelatedShop/>
       {/* Featured Products */}
       <FeaturedProduct />
     </>

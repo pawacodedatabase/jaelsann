@@ -75,6 +75,12 @@ const Header: React.FC = () => {
           >
             Contact
           </Link>
+          <Link
+            to="/products"
+            className="relative text-[#333333] hover:text-[#2E4156] transition-colors duration-300 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-[#2E4156] before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:before:left-0"
+          >
+            New Collections
+          </Link>
         </div>
 
         {/* Logo in the center */}
@@ -96,7 +102,7 @@ const Header: React.FC = () => {
           </Link>
 
           <Link
-            to="/shop"
+            to="/products"
             className="text-[#2E4156]hover:font-bold hover:text-[red]  transition-colors duration-300"
           >
             <FiShoppingBag/> 
@@ -125,6 +131,10 @@ const Header: React.FC = () => {
 
             <Link to="/contact" className="relative text-[#333333] hover:text-[#2E4156] transition-colors duration-300 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-[#2E4156] before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:before:left-0" onClick={() => setIsMenuOpen(false)}>
               Contact
+            </Link>
+            <hr className="border-2 border-[c0c8ca] w-[20%]"/>
+            <Link to="/products" className="relative text-[#333333] hover:text-[#2E4156] transition-colors duration-300 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-[#2E4156] before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:before:left-0" onClick={() => setIsMenuOpen(false)}>
+              New Collections
             </Link>
             <hr className="border-2 border-[c0c8ca] w-[20%]"/>
           </nav>
