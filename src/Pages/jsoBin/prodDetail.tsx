@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FaEnvelope, FaInstagram, FaRegStar, FaStar, FaWhatsapp } from "react-icons/fa";
-import FeaturedProduct from "../products/FeaturedProd";
+// import FeaturedProduct from "../products/FeaturedProd";
 import RelatedShop from "./related";
 
 const JSON_BIN_ID = "67e7bbcb8561e97a50f50d3c";
