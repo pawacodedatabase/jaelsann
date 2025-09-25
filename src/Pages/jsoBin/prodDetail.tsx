@@ -183,7 +183,7 @@ const ProductDetails: React.FC = () => {
 
 <RelatedShop/>
       {/* Featured Products */}
-      <FeaturedProduct />
+      {/* <FeaturedProduct /> */}
     </>
   );
 };

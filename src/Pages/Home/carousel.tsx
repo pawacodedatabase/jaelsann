@@ -99,7 +99,7 @@ const Carousel: React.FC = () => {
   transition={{ duration: 1, delay: 0.7 }}
 >
   <Link
-    to="/shop" // Replace "/shop" with the desired route
+    to="/products" // Replace "/shop" with the desired route
     className="bg-transparent border-2 border-white px-6 py-3 rounded-md hover:bg-white hover:text-[#1a2d42] transition-all duration-300"
   >
     {slide.buttonText}

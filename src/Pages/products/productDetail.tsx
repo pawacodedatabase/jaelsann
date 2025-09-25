@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { products } from './product'; // Ensure to import your product data
 import { FaEnvelope, FaInstagram, FaRegStar, FaShoppingBag, FaStar } from 'react-icons/fa';
 import { FiShoppingCart } from 'react-icons/fi';
-import FeaturedProduct from './FeaturedProd';
+import RelatedShop from '../jsoBin/related';
+// import FeaturedProduct from './FeaturedProd';
 
 interface CartItem {
   productId: number;
@@ -267,7 +268,8 @@ const ProductDetail: React.FC = () => {
         </div>
       </div>
     </div>
-    <FeaturedProduct/>
+    {/* <FeaturedProduct/> */}
+    <RelatedShop/>
     </>
   );
 };

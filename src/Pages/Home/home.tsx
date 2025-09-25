@@ -1,7 +1,7 @@
 import CollectionComponent from "../components/CollectionComponent";
 import DualImageComponent from "../components/dualimage";
 import RelatedShop from "../jsoBin/related";
-import FeaturedProduct from "../products/FeaturedProd";
+// import FeaturedProduct from "../products/FeaturedProd";
 import Carousel from "./carousel"
 
 
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     <>
     <Carousel/>
      <RelatedShop/>
-    <FeaturedProduct/>
+    {/* <FeaturedProduct/> */}
    
     <CollectionComponent/>
     <DualImageComponent/>
